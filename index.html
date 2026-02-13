@@ -5,10 +5,11 @@
     <!-- Google Font for romantic cursive -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
+        /* Full page background */
         body {
             margin: 0;
             padding: 0;
-            background-image: url('doreen.jpeg'); /* her uploaded image file */
+            background-image: url('love.jpeg'); /* must match your image file name exactly */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -18,13 +19,14 @@
             text-align: center;
         }
 
+        /* Overlay to make text readable */
         .overlay {
-            background-color: rgba(0, 0, 0, 0.5); /* dark transparent layer for readability */
-            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.5); /* dark transparent layer */
+            padding: 50px;
             border-radius: 25px;
             display: inline-block;
-            font-weight: bold;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            font-weight: bold; /* makes text bold */
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* text outline for visibility */
             max-width: 700px;
             margin-top: 50px;
         }
@@ -54,6 +56,7 @@
             100% { transform: scale(1); }
         }
 
+        /* Music button styling */
         button {
             padding: 10px 20px;
             border: none;
@@ -68,26 +71,26 @@
 </head>
 
 <body>
-<div class="overlay">
-    <h1>To My Beloved Doreen ❤️</h1>
+    <div class="overlay">
+        <h1>To My Beloved Doreen ❤️</h1>
 
-    <p>I’ve been doing some thinking about us, and I just wanted to say I really cherish the memories we made and I hope you are doing well ❤️</p>
+        <p>I’ve been doing some thinking about us, and I just wanted to say I really cherish the memories we made and I hope you are doing well ❤️</p>
 
-    <p>That love we had was legit, no doubt. Even though we're not a thing anymore, I'll always have a soft spot for it ❤️</p>
+        <p>That love we had was legit, no doubt. Even though we're not a thing anymore, I'll always have a soft spot for it ❤️</p>
 
-    <p>I’m sorry I didn’t treat you the way you deserved. I understand why you were upset, and I hope you are doing okay 🌹</p>
+        <p>I’m sorry I didn’t treat you the way you deserved. I understand why you were upset, and I hope you are doing okay 🌹</p>
 
-    <p>I know you might need space, but I just wanted to let you know that I still care about you ❤️</p>
+        <p>I know you might need space, but I just wanted to let you know that I still care about you ❤️</p>
 
-    <p>Forever thinking of you, Oluwatimileyin ❤️</p>
+        <p>Forever thinking of you, Oluwatimileyin ❤️</p>
 
-    <div class="heart">❤️</div>
+        <div class="heart">❤️</div>
 
-    <!-- Music -->
-    <audio id="bgMusic" loop>
-        <source src="love.mp3" type="audio/mpeg">
-    </audio>
-    <button onclick="document.getElementById('bgMusic').play()">Play Music ❤️</button>
-</div>
+        <!-- Music player -->
+        <audio id="bgMusic" loop>
+            <source src="love.mp3" type="audio/mpeg">
+        </audio>
+        <button onclick="document.getElementById('bgMusic').play()">Play Music ❤️</button>
+    </div>
 </body>
 </html>
