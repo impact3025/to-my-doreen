@@ -7,8 +7,8 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif; /* Changed to Arial for bold clarity */
-            font-weight: bold; /* bold text */
+            font-family: 'Arial', sans-serif; /* Bold, clear text */
+            font-weight: bold;
             color: white;
             text-align: center;
             overflow: hidden;
@@ -21,7 +21,7 @@
             background-image: url('love.jpeg'); /* your image file */
             background-size: cover;
             background-position: center;
-            opacity: 0.3; /* faint so text is visible */
+            opacity: 0.3; /* faint so text is readable */
             top: 0;
             left: 0;
             right: 0;
@@ -36,8 +36,8 @@
             padding: 50px;
             border-radius: 25px;
             display: inline-block;
-            font-weight: bold; /* makes text bold */
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* outline for readability */
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
             max-width: 700px;
             margin-top: 50px;
             position: relative;
@@ -119,9 +119,22 @@
         <div class="heart">❤️</div>
     </div>
 
-    <!-- Music autoplay -->
-    <audio id="bgMusic" loop autoplay>
+    <!-- Music autoplay with fallback -->
+    <audio id="bgMusic" loop>
         <source src="love.mp3" type="audio/mpeg">
     </audio>
-</body>
-</html>
+
+    <script>
+        // Try to autoplay music
+        window.addEventListener('load', function() {
+            const music = document.getElementById('bgMusic');
+            const playPromise = music.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // autoplay started
+                }).catch(error => {
+                    // Autoplay blocked, wait for first tap
+                    document.body.addEventListener('click', function() {
+                        music.play();
+                    }, { once: true });
+                });
