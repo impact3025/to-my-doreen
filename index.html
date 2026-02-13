@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>To My Beloved Doreen ❤️</title>
     <style>
+        /* Full page Valentine background with pink gradient */
         body {
             margin: 0;
             padding: 0;
@@ -12,16 +13,22 @@
             color: white;
             text-align: center;
             overflow: hidden;
+            height: 100vh; /* full viewport height */
+            display: flex;
+            justify-content: center; /* horizontal center */
+            align-items: center;     /* vertical center */
             background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+            position: relative;
         }
 
+        /* Her picture overlay (slightly transparent) */
         body::before {
             content: "";
-            background-image: url('love.jpeg');
+            background-image: url('love.jpeg'); /* her uploaded image */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.3;
+            opacity: 0.3; /* faint so text is readable */
             position: fixed;
             top: 0;
             left: 0;
@@ -30,15 +37,15 @@
             z-index: 0;
         }
 
+        /* Overlay text box */
         .overlay {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.6); /* makes text readable */
+            padding: 50px;
             border-radius: 20px;
             max-width: 700px;
-            margin-top: 50px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
             position: relative;
             z-index: 1;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
 
         h1 {
@@ -63,6 +70,7 @@
             100% { transform: scale(1); }
         }
 
+        /* Balloon animation */
         .balloon {
             position: absolute;
             bottom: -70px;
@@ -77,54 +85,7 @@
             100% { transform: translateY(-1000px) translateX(40px); }
         }
 
+        /* Multiple balloon colors */
         .balloon:nth-child(1) { left: 10%; background: #FF6B6B; animation-duration: 14s; }
         .balloon:nth-child(2) { left: 30%; background: #FFD93D; animation-duration: 16s; }
-        .balloon:nth-child(3) { left: 50%; background: #6BCB77; animation-duration: 18s; }
-        .balloon:nth-child(4) { left: 70%; background: #4D96FF; animation-duration: 20s; }
-        .balloon:nth-child(5) { left: 90%; background: #FF6B6B; animation-duration: 22s; }
-    </style>
-</head>
-<body>
-
-    <div class="balloon"></div>
-    <div class="balloon"></div>
-    <div class="balloon"></div>
-    <div class="balloon"></div>
-    <div class="balloon"></div>
-
-    <div class="overlay">
-        <h1>To My Beloved Doreen ❤️</h1>
-
-        <p>I’ve been doing some thinking about us, and I just wanted to say I really cherish the memories we made and I hope you are doing well ❤️</p>
-
-        <p>That love we had was legit, no doubt. Even though we're not a thing anymore, I'll always have a soft spot for it ❤️</p>
-
-        <p>I’m sorry I didn’t treat you the way you deserved. I understand why you were upset, and I hope you are doing okay 🌹</p>
-
-        <p>I know you might need space, but I just wanted to let you know that I still care about you ❤️</p>
-
-        <p>Forever thinking of you, Oluwatimileyin ❤️</p>
-
-        <div class="heart">❤️</div>
-    </div>
-
-    <audio id="bgMusic" loop>
-        <source src="love.mp3" type="audio/mpeg">
-    </audio>
-
-    <script>
-        window.addEventListener('load', function() {
-            const music = document.getElementById('bgMusic');
-            const playPromise = music.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(() => {
-                    document.body.addEventListener('click', function() {
-                        music.play();
-                    }, { once: true });
-                });
-            }
-        });
-    </script>
-
-</body>
-</html>
+        .balloon:nth-child
